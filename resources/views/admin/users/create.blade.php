@@ -1,19 +1,20 @@
 
 @extends('adminlte::page')
 
-@if ($errors->any())
-<div class="alert alert-danger">
-    <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
-
 @section('content')
-<div class="container">
 
+
+<div class="container">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    
 
 <div class="login-dark">
     <form method="POST" action="{{route('admin.users.store')}}">
@@ -36,7 +37,7 @@
                 <option class="form-control" value="{{$id}}" >{{$role}}</option>
             @endforeach
         </select>
-        <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Edit</button></div>
+        <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Create</button></div>
     </form>
 </div>
 </div>
