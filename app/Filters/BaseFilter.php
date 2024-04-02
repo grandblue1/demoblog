@@ -150,7 +150,7 @@ class BaseFilter
         return collect($this->values);
     }
 
-    // View Method
+
     public function view(): string 
     {
         return static::$view;
@@ -200,5 +200,12 @@ class BaseFilter
         }
 
         return $query;
+    }
+
+    public function handle(Builder $query, $next){
+
+        $this->apply($query);
+
+        return $next($query);
     }
 }

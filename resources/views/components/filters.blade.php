@@ -31,3 +31,13 @@
 
     <button type="submit" style="margin-left: 15px;" class="tw-mt-10 tw-w-full tw-bg-indigo-600 tw-border tw-border-transparent tw-rounded-md tw-py-3 tw-px-8 tw-flex tw-items-center tw-justify-center">Поиск</button>
 </form>
+<script>
+    document.getElementById('filter-submission-form').addEventListener('submit', function(event) {
+        var filterInputs = this.querySelectorAll('input[name^="filters"]');
+        filterInputs.forEach(function(input) {
+            if (input.value.trim() === '') {
+                input.remove();
+            }
+        });
+    });
+</script>

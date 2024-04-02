@@ -2,7 +2,7 @@
 
 namespace App\Filters;
 
-use App\Contracts\Filters\FilterContract;
+use App\Interfaces\FilterContract;
 use Illuminate\Database\Eloquent\Builder;
 
 class RangeFilter extends BaseFilter implements FilterContract

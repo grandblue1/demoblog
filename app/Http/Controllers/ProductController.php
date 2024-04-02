@@ -25,14 +25,7 @@ class ProductController extends Controller
     {
         $filters = app(App::class)->filters();
         $products =  Product::query()->with('categories')->filtered($filters)->paginate(10);
-    
-        if ($request->query('filters')) {
-            $currQuery = ['filters' => $request->query('filters')];
-            $query = ['filters' => array_filter($request->query('filters'))];
-            if($currQuery != $query){
-                return redirect()->route('main',$query);
-            }
-        }
+        
         return view('main', compact('products', 'filters'));
     }
 

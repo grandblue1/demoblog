@@ -95,9 +95,12 @@
     </header>
 
     <div class="d-flex">
-        <aside style="width: 30%">
-            @include('components.filters', ['filters' => $filters])
-        </aside>
+        
+        @if(Route::currentRouteName() == 'main')
+            <aside style="width: 30%">
+                @include('components.filters', ['filters' => $filters])
+            </aside>
+        @endif
         <main style="flex-grow: 1">
             @yield('content')
         </main>

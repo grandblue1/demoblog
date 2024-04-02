@@ -2,7 +2,7 @@
 
 namespace App\Filters;
 
-use App\Contracts\Filters\FilterContract;
+use App\Interfaces\FilterContract;
 
 class DateFilter extends BaseFilter implements FilterContract
 {
