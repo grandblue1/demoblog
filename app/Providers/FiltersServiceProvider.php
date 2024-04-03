@@ -32,8 +32,7 @@ class FiltersServiceProvider extends ServiceProvider
             DateFilter::make('Дата', 'created_at'),
             RangeFilter::make('Стоимость', 'price', values: Product::all()->pluck('price','id')->toArray())
                 ->attributes(['step' => 100, 'min' => 0, 'max' => Product::query()->max('price')]),
-            CheckboxFilter::make('Категории','categories','id',Category::all()->pluck('title','id')->toArray())
-                
+            CheckboxFilter::make('Категории','categories','id',Category::all()->pluck('title','id')->toArray()),
             // AgeRangeFilter::make('Стаж работы', 'work_start_at')
             //     ->attributes(['step' => 1, 'min' => 0, 'max' => 50]),
             // AgeRangeFilter::make('Возраст', 'birthday')

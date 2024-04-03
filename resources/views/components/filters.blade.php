@@ -33,7 +33,7 @@
 </form>
 <script>
     document.getElementById('filter-submission-form').addEventListener('submit', function(event) {
-        var filterInputs = this.querySelectorAll('input[name^="filters"]');
+        var filterInputs = this.querySelectorAll('input,select');
         filterInputs.forEach(function(input) {
             if (input.value.trim() === '') {
                 input.remove();

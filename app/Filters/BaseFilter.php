@@ -174,8 +174,8 @@ class BaseFilter
      */
     public function name(): string
     {
-        return (string) str("filters[{$this->field()}]")
-            ->when($this->isMultiple(),fn(Stringable $str) => $str->append("[]"));
+        return (string) str("{$this->field()}")
+            ->when($this->isMultiple(), fn(Stringable $str) => $str->append('[]'));
     }
 
     // Apply Method

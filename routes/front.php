@@ -9,7 +9,7 @@ use App\Http\Controllers\Payments\PaymentController;
 
 Route::group(['namespace' => 'Front'], function () {
     
-    Route::get('/', [ProductController::class, 'index'])->name('main');
+    Route::get('/', [ProductController::class, 'index'])->name('main')->middleware('queryTransform');
     Route::get('/product/{product}', [ProductController::class, 'show'])->name('products.show');
     
     Route::get('/product/download/{product}/{download_tkn}', [ProductController::class,'download'])->middleware(['auth','signed'])->name('product.download');

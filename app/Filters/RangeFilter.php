@@ -10,7 +10,7 @@ class RangeFilter extends BaseFilter implements FilterContract
     protected static string $view = 'range';
 
     public function apply(Builder $query): Builder
-    {
+    {       
         if(is_null($this->requestValue())){
             return $query;
         }
