@@ -49,7 +49,7 @@
 
     @endforeach
 @else
-    <input 
+    {{-- <input 
         id="{{$filter->id() }}"
         name="{{$filter->name()}}"
         value="1"
@@ -57,5 +57,6 @@
         class="form-check-input me-1"
     />
     <label for="{{$filter->id() }}" class="form-check-label">
-    </label>    
+    </label>     --}}
+    <h3>No categories exist</h3>
 @endif

@@ -4,14 +4,12 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Front\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Payments\PaymentController;
-
-
+use \App\Models\Product;
 
 Route::group(['namespace' => 'Front'], function () {
-    
+
     Route::get('/', [ProductController::class, 'index'])->name('main')->middleware('queryTransform');
     Route::get('/product/{product}', [ProductController::class, 'show'])->name('products.show');
-    
     Route::get('/product/download/{product}/{download_tkn}', [ProductController::class,'download'])->middleware(['auth','signed'])->name('product.download');
     Route::get('/product/generate/{user}/{product}', [ProductController::class,'generateDownloadLink'])->middleware(['auth','isUser'])->name('product.generate');
 

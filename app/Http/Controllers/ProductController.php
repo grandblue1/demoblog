@@ -25,7 +25,6 @@ class ProductController extends Controller
     {
         $filters = app(App::class)->filters();
         $products =  Product::query()->with('categories')->filtered($filters)->paginate(10);
-        
         return view('main', compact('products', 'filters'));
     }
 

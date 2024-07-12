@@ -19,3 +19,4 @@ yarn-error.log
 /.vscode
 /app/Services/StripePayment.php
 /app/Services/PaypalPayment.php
+/tests/Unit
